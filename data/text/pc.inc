@@ -1,0 +1,6 @@
+Text_BootUpPC: .string "{PLAYER} encendio el PC.$"
+gText_WhichPCShouldBeAccessed:: .string "A que PC quieres acceder?$"
+gText_AccessedSomeonesPC:: .string "PC de ALGUIEN accedido.$"
+gText_StorageSystemOpened:: .string "Sistema de Almacenaje POKeMON abierto.$"
+gText_AccessedPlayersPC:: .string "PC de {PLAYER} accedido.$"
+gText_AccessedBillsPC:: .string "PC de BILL accedido.$"

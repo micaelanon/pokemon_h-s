@@ -90,7 +90,13 @@ bool8 TransferBugContestMon(void)
     return FALSE;
 }
 
-
+// Reward tables for Bug Contest
+static const u16 sFirstPlaceRewards[]  = { ITEM_MOON_STONE, ITEM_SUN_STONE, ITEM_LEAF_STONE};
+static const u16 sSecondPlaceRewards[] = { ITEM_FIRE_STONE, ITEM_THUNDER_STONE, ITEM_WATER_STONE };
+static const u16 sThirdPlaceRewards[]  = {
+    ITEM_ORAN_BERRY, ITEM_CHERI_BERRY, ITEM_PERSIM_BERRY,
+    ITEM_PECHA_BERRY, ITEM_RAWST_BERRY, ITEM_ASPEAR_BERRY, ITEM_CHESTO_BERRY
+};
 
 bool8 JudgeBugContestMon(void)
 {
@@ -149,14 +155,6 @@ bool8 JudgeBugContestMon(void)
 
     return FALSE;
 }
-
-// Reward tables
-static const u16 sFirstPlaceRewards[]  = { ITEM_MOON_STONE, ITEM_SUN_STONE, ITEM_LEAF_STONE};
-static const u16 sSecondPlaceRewards[] = { ITEM_FIRE_STONE, ITEM_THUNDER_STONE, ITEM_WATER_STONE };
-static const u16 sThirdPlaceRewards[]  = {
-    ITEM_ORAN_BERRY, ITEM_CHERI_BERRY, ITEM_PERSIM_BERRY,
-    ITEM_PECHA_BERRY, ITEM_RAWST_BERRY, ITEM_ASPEAR_BERRY, ITEM_CHESTO_BERRY
-};
 
 static bool32 IsPlayerDefeated(u32 battleOutcome)
 {

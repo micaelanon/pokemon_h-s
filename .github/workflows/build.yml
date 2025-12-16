@@ -21,20 +21,9 @@ jobs:
           apt-get update
           apt-get install -y build-essential git libpng-dev
 
-      - name: Install agbcc compiler
+      - name: Build ROM with modern compiler
         run: |
-          git clone https://github.com/pret/agbcc.git tools/agbcc
-          cd tools/agbcc
-          ./build.sh
-          ./install.sh ../..
-
-      - name: Convert .pal files to CRLF
-        run: |
-          find . -name "*.pal" -type f -exec sed -i 's/$/\r/' {} \;
-
-      - name: Build ROM
-        run: |
-          make -j$(nproc)
+          make -j$(nproc) MODERN=1
 
       - name: Upload ROM
         uses: actions/upload-artifact@v4

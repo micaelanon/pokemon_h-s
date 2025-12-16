@@ -1,0 +1,19 @@
+# Set default behavior to automatically normalize line endings.
+* text=auto
+
+# Force binary files to remain unchanged
+*.png binary
+*.gba binary
+*.bin binary
+*.elf binary
+*.o binary
+*.a binary
+
+# Keep LF line endings for specific files
+*.pal text eol=lf
+*.gbapal text eol=lf
+*.s text eol=lf
+*.inc text eol=lf
+*.sh text eol=lf
+
+# Let Git handle everything else

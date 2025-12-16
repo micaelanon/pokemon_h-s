@@ -29,9 +29,17 @@ jobs:
         run: |
           make -j$(nproc) MODERN=1
 
-      - name: Upload ROM
+      - name: List generated files
+        run: |
+          echo "=== ROM generado ==="
+          ls -lh pokemonHnS.gba 2>/dev/null || echo "ERROR: No se generó pokemonHnS.gba"
+          echo ""
+          echo "=== Todos los archivos .gba ==="
+          find . -name "*.gba" -type f
+
+      - name: Upload ROM traducido
         uses: actions/upload-artifact@v4
         with:
-          name: pokemonHnS-traducido-espanol
-          path: "*.gba"
-          if-no-files-found: error
+          name: pokemonHnS-espanol-v1.2.1
+          path: pokemonHnS.gba
+          if-no-files-found: warn

@@ -28,6 +28,10 @@ jobs:
           ./build.sh
           ./install.sh ../..
 
+      - name: Convert .pal files to CRLF
+        run: |
+          find . -name "*.pal" -type f -exec sed -i 's/$/\r/' {} \;
+
       - name: Build ROM
         run: |
           make -j$(nproc)

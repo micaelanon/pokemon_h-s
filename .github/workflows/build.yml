@@ -10,24 +10,16 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    container: devkitpro/devkitarm:latest
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-        with:
-          lfs: false
-
-      - name: Configure git line endings
-        run: |
-          git config core.autocrlf false
-          git config core.eol lf
-          git rm --cached -r .
-          git reset --hard HEAD
 
       - name: Install dependencies
         run: |
-          sudo apt-get update
-          sudo apt-get install -y build-essential binutils-arm-none-eabi git libpng-dev gcc-arm-none-eabi
+          apt-get update
+          apt-get install -y build-essential git libpng-dev
 
       - name: Install agbcc compiler
         run: |
